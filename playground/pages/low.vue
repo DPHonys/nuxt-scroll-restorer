@@ -13,6 +13,10 @@
         <NuxtLink to="/high">High Page</NuxtLink> |
         <NuxtLink to="/high#lazy-section">High Page Lazy Section</NuxtLink>
       </p>
+      <p>
+        <NuxtLink to="/async">Async Data</NuxtLink> |
+        <NuxtLink to="/async#item-5">Async Item 5 (delayed)</NuxtLink>
+      </p>
     </div>
   </div>
 </template>

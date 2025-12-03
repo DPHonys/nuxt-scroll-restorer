@@ -4,6 +4,7 @@
       <NuxtLink to="/">Home</NuxtLink>
       <NuxtLink to="/high">High Page</NuxtLink>
       <NuxtLink to="/low">Low Page</NuxtLink>
+      <NuxtLink to="/async">Async Data</NuxtLink>
     </nav>
     <NuxtPage />
   </ScrollRestorer>
