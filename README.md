@@ -79,3 +79,38 @@ That's it! You can now use My Module in your Nuxt app ✨
 [license-href]: https://npmjs.com/package/my-module
 [nuxt-src]: https://img.shields.io/badge/Nuxt-020420?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
+
+---
+
+## TODO Before Publishing
+
+- [ ] Finish in-code TODOs
+- [ ] Update playground
+- [ ] Update dependencies
+- [ ] Update README.md with actual documentation:
+  - [ ] Replace "My Module" with "Nuxt Scroll Restorer"
+  - [ ] Write proper description
+  - [ ] Document features (scroll restoration, anchor navigation, lazy content support, Safari workaround)
+  - [ ] Add usage examples for `<ScrollRestorer />` component
+  - [ ] Add usage examples for `useScrollRestorer()` composable
+  - [ ] Document configuration options (`lazyTimeout`, `scrollBehavior`, `anchorBehavior`, `debug`)
+  - [ ] Document API methods (`saveScrollPosition`, `scrollToTop`, `disable`, `enable`, etc.)
+- [ ] Update package.json metadata:
+  - [ ] Change `description` from "My new Nuxt module" to actual description
+  - [ ] Change `repository` from "your-org/my-module" to actual repo URL
+- [ ] Update badge URLs in README.md (replace `my-module` with `nuxt-scroll-restorer`)
+- [ ] Create `LICENSE` file (MIT)
+- [ ] Create `CHANGELOG.md`
+- [ ] Add `typecheck` script to package.json (run `test:types` in CI)
+- [ ] Set up GitHub Actions CI workflow (lint, typecheck, test:unit, test:e2e)
+- [ ] Add import sorting (e.g., `eslint-plugin-import` or `@trivago/prettier-plugin-sort-imports`)
+- [ ] Set up automatic changelog generation and npm publishing in CI (e.g., `changelogen` + GitHub Actions release workflow)
+- [ ] Add `CONTRIBUTING.md` with contribution guidelines
+- [ ] Add `CODE_OF_CONDUCT.md`
+- [ ] Add GitHub issue templates (bug report, feature request)
+- [ ] Add GitHub PR template
+- [ ] Add `SECURITY.md` for vulnerability reporting
+- [ ] Set up Renovate or Dependabot for automated dependency updates
+- [ ] Add test coverage reporting (Codecov/Coveralls)
+- [ ] Add `.nvmrc` or `engines` field to pin Node.js version
+- [ ] Consider adding `FUNDING.yml` for sponsorship

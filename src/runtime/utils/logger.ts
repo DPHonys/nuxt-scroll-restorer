@@ -1,5 +1,7 @@
 import { createConsola } from 'consola'
 
+// TODO: Check if there is better way to have logger
+
 const TAG = 'scroll-restorer'
 
 const _logger = createConsola({ level: -999 }).withTag(TAG)

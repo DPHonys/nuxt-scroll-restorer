@@ -1,6 +1,8 @@
 import { getKey } from './constants'
 import type { ScrollPos, HistoryState } from './types'
 
+// TODO: Make into functions
+
 export const isRecord = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null && !Array.isArray(value)
 

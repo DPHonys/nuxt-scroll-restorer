@@ -29,6 +29,8 @@ import type {
 } from '../utils/types'
 import '../utils/types' // NuxtApp augmentation side-effect
 
+// TODO: Look into how to properly do imports in module
+
 export function useScrollRestorer(options: ScrollRestorerOptions = {}) {
   const nuxtApp = useNuxtApp()
   const route = useRoute()

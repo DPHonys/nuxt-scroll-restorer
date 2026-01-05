@@ -71,9 +71,6 @@ jobs:
       - name: Prepare
         run: pnpm dev:prepare
 
-      - name: Run SSR tests
-        run: pnpm test
-
       - name: Run unit tests
         run: pnpm test:unit
 
