@@ -84,9 +84,14 @@ That's it! You can now use My Module in your Nuxt app ✨
 
 ## TODO Before Publishing
 
+### Implementation
+
 - [ ] Finish in-code TODOs
 - [ ] Update playground
 - [ ] Update dependencies
+
+### Documentation
+
 - [ ] Update README.md with actual documentation:
   - [ ] Replace "My Module" with "Nuxt Scroll Restorer"
   - [ ] Write proper description
@@ -95,22 +100,35 @@ That's it! You can now use My Module in your Nuxt app ✨
   - [ ] Add usage examples for `useScrollRestorer()` composable
   - [ ] Document configuration options (`lazyTimeout`, `scrollBehavior`, `anchorBehavior`, `debug`)
   - [ ] Document API methods (`saveScrollPosition`, `scrollToTop`, `disable`, `enable`, etc.)
+- [ ] Update badge URLs in README.md (replace `my-module` with `nuxt-scroll-restorer`)
+
+### Package Metadata
+
 - [ ] Update package.json metadata:
   - [ ] Change `description` from "My new Nuxt module" to actual description
   - [ ] Change `repository` from "your-org/my-module" to actual repo URL
-- [ ] Update badge URLs in README.md (replace `my-module` with `nuxt-scroll-restorer`)
 - [ ] Create `LICENSE` file (MIT)
 - [ ] Create `CHANGELOG.md`
+- [ ] Add `.nvmrc` or `engines` field to pin Node.js version
+
+### CI/CD & Quality
+
 - [ ] Add `typecheck` script to package.json (run `test:types` in CI)
 - [ ] Set up GitHub Actions CI workflow (lint, typecheck, test:unit, test:e2e)
 - [ ] Add import sorting (e.g., `eslint-plugin-import` or `@trivago/prettier-plugin-sort-imports`)
 - [ ] Set up automatic changelog generation and npm publishing in CI (e.g., `changelogen` + GitHub Actions release workflow)
+- [ ] Publish to JSR (JavaScript Registry)
+- [ ] Add test coverage reporting (Codecov/Coveralls)
+
+### Community & Contribution
+
 - [ ] Add `CONTRIBUTING.md` with contribution guidelines
 - [ ] Add `CODE_OF_CONDUCT.md`
 - [ ] Add GitHub issue templates (bug report, feature request)
 - [ ] Add GitHub PR template
 - [ ] Add `SECURITY.md` for vulnerability reporting
+
+### Nice-to-Have
+
 - [ ] Set up Renovate or Dependabot for automated dependency updates
-- [ ] Add test coverage reporting (Codecov/Coveralls)
-- [ ] Add `.nvmrc` or `engines` field to pin Node.js version
 - [ ] Consider adding `FUNDING.yml` for sponsorship
