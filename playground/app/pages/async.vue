@@ -14,7 +14,7 @@
       class="mb-8"
     />
 
-    <div class="h-[200px]" />
+    <div class="h-50" />
 
     <UCard v-if="loading" variant="subtle" class="text-center">
       <div class="flex items-center justify-center gap-3 py-4">
@@ -43,7 +43,7 @@
       </UCard>
     </div>
 
-    <div class="h-[200px]" />
+    <div class="h-50" />
 
     <UCard id="bottom" variant="subtle">
       <h2 class="text-xl font-semibold text-highlighted mb-2">

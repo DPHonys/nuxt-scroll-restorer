@@ -5,7 +5,7 @@
       Scroll down and navigate to other pages to test scroll restoration.
     </p>
 
-    <div class="h-[600px]" />
+    <div class="h-150" />
 
     <UCard id="section-1" variant="subtle">
       <h2 class="text-xl font-semibold text-highlighted mb-2">Section 1</h2>
@@ -17,7 +17,7 @@
       </p>
     </UCard>
 
-    <div class="h-[600px]" />
+    <div class="h-150" />
 
     <UCard id="section-2" variant="subtle">
       <h2 class="text-xl font-semibold text-highlighted mb-2">Section 2</h2>
@@ -29,7 +29,7 @@
       </p>
     </UCard>
 
-    <div class="h-[600px]" />
+    <div class="h-150" />
 
     <UCard id="section-3" variant="subtle">
       <h2 class="text-xl font-semibold text-highlighted mb-2">Section 3</h2>
@@ -39,6 +39,6 @@
       </p>
     </UCard>
 
-    <div class="h-[600px]" />
+    <div class="h-150" />
   </UContainer>
 </template>

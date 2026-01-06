@@ -8,7 +8,7 @@
       content.
     </p>
 
-    <div class="h-[800px]" />
+    <div class="h-200" />
 
     <UCard id="section-1" variant="subtle">
       <h2 class="text-xl font-semibold text-highlighted mb-2">Section 1</h2>
@@ -18,7 +18,7 @@
       </p>
     </UCard>
 
-    <div class="h-[800px]" />
+    <div class="h-200" />
 
     <!-- Simulate lazy-loaded content -->
     <UCard v-if="showLazy" id="lazy-section" variant="subtle">
@@ -39,14 +39,14 @@
       </div>
     </UCard>
 
-    <div class="h-[800px]" />
+    <div class="h-200" />
 
     <UCard id="section-2" variant="subtle">
       <h2 class="text-xl font-semibold text-highlighted mb-2">Section 2</h2>
       <p>Another section for testing.</p>
     </UCard>
 
-    <div class="h-[800px]" />
+    <div class="h-200" />
 
     <UCard id="bottom" variant="subtle">
       <h2 class="text-xl font-semibold text-highlighted mb-2">
@@ -59,7 +59,7 @@
       <UButton to="/" variant="link" class="p-0">Go back home</UButton>
     </UCard>
 
-    <div class="h-[800px]" />
+    <div class="h-200" />
   </UContainer>
 </template>
 
