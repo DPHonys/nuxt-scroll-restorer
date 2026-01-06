@@ -1,44 +1,60 @@
 <template>
-  <div class="page">
-    <h1>Async Data Page</h1>
-    <p>
+  <UContainer class="py-8">
+    <h1 class="text-3xl font-bold text-highlighted mb-2">Async Data Page</h1>
+    <p class="text-muted mb-4">
       This page simulates fetching data from an API. The items don't exist until
       the data loads.
     </p>
-    <p class="hint">
-      Try navigating to <code>/async#item-5</code> - the element doesn't exist
-      until after data loads.
-    </p>
 
-    <div class="spacer" />
+    <UAlert
+      color="info"
+      title="Test async anchor navigation"
+      description="Try navigating to /async#item-5 - the element doesn't exist until after data loads."
+      icon="i-lucide-info"
+      class="mb-8"
+    />
 
-    <div v-if="loading" class="loading">
-      <p>Fetching data... ({{ countdown }}s remaining)</p>
-    </div>
+    <div class="h-[200px]" />
 
-    <div v-else class="items">
-      <div
+    <UCard v-if="loading" variant="subtle" class="text-center">
+      <div class="flex items-center justify-center gap-3 py-4">
+        <UIcon name="i-lucide-loader-circle" class="animate-spin text-xl" />
+        <span class="text-lg"
+          >Fetching data... ({{ countdown }}s remaining)</span
+        >
+      </div>
+    </UCard>
+
+    <div v-else class="flex flex-col gap-4">
+      <UCard
         v-for="item in items"
         :id="`item-${item.id}`"
         :key="item.id"
-        class="item"
+        variant="subtle"
+        class="border-l-4 border-l-primary"
       >
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-        <code>/async#item-{{ item.id }}</code>
-      </div>
+        <h3 class="text-lg font-semibold text-highlighted mb-1">
+          {{ item.title }}
+        </h3>
+        <p class="text-muted mb-2">{{ item.description }}</p>
+        <code class="text-sm bg-muted px-2 py-1 rounded"
+          >/async#item-{{ item.id }}</code
+        >
+      </UCard>
     </div>
 
-    <div class="spacer" />
+    <div class="h-[200px]" />
 
-    <section id="bottom">
-      <h2>Bottom Section</h2>
-      <p>This section exists immediately, unlike the items above.</p>
-      <p>
-        <NuxtLink to="/">Go back home</NuxtLink>
+    <UCard id="bottom" variant="subtle">
+      <h2 class="text-xl font-semibold text-highlighted mb-2">
+        Bottom Section
+      </h2>
+      <p class="mb-2">
+        This section exists immediately, unlike the items above.
       </p>
-    </section>
-  </div>
+      <UButton to="/" variant="link" class="p-0">Go back home</UButton>
+    </UCard>
+  </UContainer>
 </template>
 
 <script setup lang="ts">
@@ -74,73 +90,3 @@ onMounted(async () => {
   loading.value = false
 })
 </script>
-
-<style scoped>
-.page {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-}
-
-.spacer {
-  height: 200px;
-}
-
-.hint {
-  background: #dbeafe;
-  padding: 1rem 1.25rem;
-  border-radius: 8px;
-  border-left: 4px solid #3b82f6;
-}
-
-.loading {
-  padding: 2rem;
-  background: #fef3c7;
-  border-radius: 8px;
-  text-align: center;
-  font-size: 1.1rem;
-  border: 1px solid #fcd34d;
-}
-
-.items {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.item {
-  padding: 1.25rem;
-  background: #fff;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-  border-left: 4px solid #00dc82;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.item h3 {
-  margin: 0 0 0.5rem 0;
-  color: #020420;
-}
-
-.item p {
-  margin: 0 0 0.5rem 0;
-}
-
-section {
-  padding: 1.5rem;
-  background: #fff;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-section h2 {
-  margin-top: 0;
-  color: #020420;
-}
-
-h1 {
-  color: #020420;
-  margin-bottom: 0.5rem;
-}
-</style>

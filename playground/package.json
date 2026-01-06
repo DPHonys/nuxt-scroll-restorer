@@ -8,6 +8,11 @@
     "generate": "nuxi generate"
   },
   "dependencies": {
+    "@nuxt/ui": "^4.3.0",
     "nuxt": "^4.2.2"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.82",
+    "tailwindcss": "^4.1.18"
   }
 }

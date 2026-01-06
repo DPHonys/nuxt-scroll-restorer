@@ -1,50 +1,66 @@
 <template>
-  <div class="page">
-    <h1>High Page (Tall Content)</h1>
-    <p>
+  <UContainer class="py-8">
+    <h1 class="text-3xl font-bold text-highlighted mb-2">
+      High Page (Tall Content)
+    </h1>
+    <p class="text-muted mb-8">
       This page has lots of content to test scroll restoration with lazy
       content.
     </p>
 
-    <div class="spacer" />
+    <div class="h-[800px]" />
 
-    <section id="section-1">
-      <h2>Section 1</h2>
-      <p>You can link directly to this section: <code>/high#section-1</code></p>
-    </section>
+    <UCard id="section-1" variant="subtle">
+      <h2 class="text-xl font-semibold text-highlighted mb-2">Section 1</h2>
+      <p>
+        You can link directly to this section:
+        <code class="text-sm bg-muted px-2 py-1 rounded">/high#section-1</code>
+      </p>
+    </UCard>
 
-    <div class="spacer" />
+    <div class="h-[800px]" />
 
     <!-- Simulate lazy-loaded content -->
-    <section v-if="showLazy" id="lazy-section">
-      <h2>Lazy Section (loaded after 1s)</h2>
+    <UCard v-if="showLazy" id="lazy-section" variant="subtle">
+      <h2 class="text-xl font-semibold text-highlighted mb-2">
+        Lazy Section (loaded after 1s)
+      </h2>
       <p>
         This section appears after a delay to test anchor waiting. Link:
-        <code>/high#lazy-section</code>
+        <code class="text-sm bg-muted px-2 py-1 rounded"
+          >/high#lazy-section</code
+        >
       </p>
-    </section>
-    <div v-else class="loading">Loading lazy content...</div>
+    </UCard>
+    <UCard v-else variant="subtle" class="text-center">
+      <div class="flex items-center justify-center gap-3 py-4">
+        <UIcon name="i-lucide-loader-circle" class="animate-spin text-xl" />
+        <span>Loading lazy content...</span>
+      </div>
+    </UCard>
 
-    <div class="spacer" />
+    <div class="h-[800px]" />
 
-    <section id="section-2">
-      <h2>Section 2</h2>
+    <UCard id="section-2" variant="subtle">
+      <h2 class="text-xl font-semibold text-highlighted mb-2">Section 2</h2>
       <p>Another section for testing.</p>
-    </section>
+    </UCard>
 
-    <div class="spacer" />
+    <div class="h-[800px]" />
 
-    <section id="bottom">
-      <h2>Bottom Section</h2>
-      <p>
+    <UCard id="bottom" variant="subtle">
+      <h2 class="text-xl font-semibold text-highlighted mb-2">
+        Bottom Section
+      </h2>
+      <p class="mb-2">
         You've reached the bottom! Scroll position should be saved when you
         navigate away.
       </p>
-      <p><NuxtLink to="/">Go back home</NuxtLink></p>
-    </section>
+      <UButton to="/" variant="link" class="p-0">Go back home</UButton>
+    </UCard>
 
-    <div class="spacer" />
-  </div>
+    <div class="h-[800px]" />
+  </UContainer>
 </template>
 
 <script setup lang="ts">
@@ -57,41 +73,3 @@ onMounted(() => {
   }, 1000)
 })
 </script>
-
-<style scoped>
-.page {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-}
-
-.spacer {
-  height: 800px;
-}
-
-section {
-  padding: 1.5rem;
-  background: #fff;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.loading {
-  padding: 2rem;
-  background: #fef3c7;
-  border-radius: 8px;
-  text-align: center;
-  border: 1px solid #fcd34d;
-}
-
-h1 {
-  color: #020420;
-  margin-bottom: 0.5rem;
-}
-
-h2 {
-  margin-top: 0;
-  color: #020420;
-}
-</style>
