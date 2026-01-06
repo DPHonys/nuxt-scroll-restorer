@@ -39,7 +39,9 @@
 
 <style scoped>
 .page {
-  padding: 80px 20px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
 }
 
 .spacer {
@@ -47,12 +49,20 @@
 }
 
 section {
-  padding: 20px;
-  background: #f5f5f5;
+  padding: 1.5rem;
+  background: #fff;
   border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #020420;
+  margin-bottom: 0.5rem;
 }
 
 h2 {
   margin-top: 0;
+  color: #020420;
 }
 </style>

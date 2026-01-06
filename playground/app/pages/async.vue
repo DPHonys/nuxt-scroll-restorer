@@ -77,7 +77,9 @@ onMounted(async () => {
 
 <style scoped>
 .page {
-  padding: 80px 20px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
 }
 
 .spacer {
@@ -85,62 +87,60 @@ onMounted(async () => {
 }
 
 .hint {
-  background: #e3f2fd;
-  padding: 12px 16px;
+  background: #dbeafe;
+  padding: 1rem 1.25rem;
   border-radius: 8px;
-  border-left: 4px solid #2196f3;
+  border-left: 4px solid #3b82f6;
 }
 
 .loading {
-  padding: 40px;
-  background: #fff3cd;
+  padding: 2rem;
+  background: #fef3c7;
   border-radius: 8px;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  border: 1px solid #fcd34d;
 }
 
 .items {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .item {
-  padding: 20px;
-  background: #f3e5f5;
+  padding: 1.25rem;
+  background: #fff;
   border-radius: 8px;
-  border-left: 4px solid #9c27b0;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #00dc82;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .item h3 {
-  margin: 0 0 8px 0;
-  color: #7b1fa2;
+  margin: 0 0 0.5rem 0;
+  color: #020420;
 }
 
 .item p {
-  margin: 0 0 8px 0;
-}
-
-.item code {
-  background: #e0e0e0;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 0.85rem;
+  margin: 0 0 0.5rem 0;
 }
 
 section {
-  padding: 20px;
-  background: #e8f4f8;
+  padding: 1.5rem;
+  background: #fff;
   border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 section h2 {
   margin-top: 0;
+  color: #020420;
 }
 
-code {
-  background: #e0e0e0;
-  padding: 2px 6px;
-  border-radius: 4px;
+h1 {
+  color: #020420;
+  margin-bottom: 0.5rem;
 }
 </style>
