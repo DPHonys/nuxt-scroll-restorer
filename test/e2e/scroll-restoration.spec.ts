@@ -132,4 +132,55 @@ test.describe('Scroll Restoration', () => {
     })
     expect(isVisible).toBe(true)
   })
+
+  test('anchor navigation respects anchorOffset', async ({ page, goto }) => {
+    // The playground has anchorOffset: 72 configured
+    const expectedOffset = 72
+
+    // Navigate directly to anchor
+    await goto('/high#section-1', { waitUntil: 'hydration' })
+
+    // Wait for scroll to anchor (smooth scroll)
+    await page.waitForTimeout(1000)
+
+    // Check that section-1 is positioned with the offset from the top
+    const elementTop = await page.evaluate(() => {
+      const element = document.getElementById('section-1')
+      if (!element) return null
+      return element.getBoundingClientRect().top
+    })
+
+    expect(elementTop).not.toBeNull()
+    // The element should be positioned near the offset value from the viewport top
+    // Allow some tolerance for smooth scrolling and rendering
+    expect(elementTop).toBeGreaterThanOrEqual(expectedOffset - 20)
+    expect(elementTop).toBeLessThanOrEqual(expectedOffset + 20)
+  })
+
+  test('anchor navigation with offset works for lazy content', async ({
+    page,
+    goto,
+  }) => {
+    // The playground has anchorOffset: 72 configured
+    const expectedOffset = 72
+
+    // Navigate to lazy section (appears after 1s delay)
+    await goto('/high#lazy-section', { waitUntil: 'hydration' })
+
+    // Wait for lazy content to load and scroll
+    await page.waitForSelector('#lazy-section', { timeout: 5000 })
+    await page.waitForTimeout(1000)
+
+    // Check that lazy-section is positioned with the offset
+    const elementTop = await page.evaluate(() => {
+      const element = document.getElementById('lazy-section')
+      if (!element) return null
+      return element.getBoundingClientRect().top
+    })
+
+    expect(elementTop).not.toBeNull()
+    // The element should be positioned near the offset value from the viewport top
+    expect(elementTop).toBeGreaterThanOrEqual(expectedOffset - 20)
+    expect(elementTop).toBeLessThanOrEqual(expectedOffset + 20)
+  })
 })
