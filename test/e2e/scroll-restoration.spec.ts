@@ -18,7 +18,7 @@ test.describe('Scroll Restoration', () => {
     await page.waitForTimeout(700) // Wait for throttled scroll save
 
     // Navigate to home
-    await page.click('a[href="/"]')
+    await page.getByRole('link', { name: 'Home', exact: true }).click()
     await page.waitForURL('/')
 
     // Go back
@@ -104,7 +104,7 @@ test.describe('Scroll Restoration', () => {
     expect(scrollBefore).toBeGreaterThan(700)
 
     // Navigate forward to async page via link click (not back/forward)
-    await page.click('a[href="/"]')
+    await page.getByRole('link', { name: 'Go back home', exact: true }).click()
     await page.waitForURL('/')
     await page.waitForTimeout(500)
 
@@ -118,7 +118,9 @@ test.describe('Scroll Restoration', () => {
     await goto('/', { waitUntil: 'hydration' })
 
     // Click on internal anchor link
-    await page.click('a[href="/#section-1"]')
+    await page
+      .getByRole('link', { name: 'Link to Section 1', exact: true })
+      .click()
     await page.waitForTimeout(500)
 
     // Check that section-1 is in view
