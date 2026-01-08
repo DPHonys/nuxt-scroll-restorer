@@ -29,6 +29,12 @@ export interface ModuleOptions {
    */
   anchorBehavior: ScrollBehavior
   /**
+   * Offset in pixels when scrolling to anchors (useful for fixed headers)
+   * Can be a number or a function that returns a number
+   * @default 0
+   */
+  anchorOffset: number | (() => number)
+  /**
    * Enable debug logging
    * @default false
    */
@@ -48,6 +54,7 @@ const defaults: ModuleOptions = {
   lazyTimeout: 5000,
   scrollBehavior: 'instant',
   anchorBehavior: 'smooth',
+  anchorOffset: 0,
   debug: false,
 }
 
@@ -73,6 +80,7 @@ export default defineNuxtModule<ModuleOptions>({
       lazyTimeout: options.lazyTimeout,
       scrollBehavior: options.scrollBehavior,
       anchorBehavior: options.anchorBehavior,
+      anchorOffset: options.anchorOffset,
       debug: options.debug,
     }
 

@@ -18,6 +18,12 @@ export interface ScrollRestorerOptions {
    */
   anchorBehavior?: ScrollBehavior
   /**
+   * Offset in pixels when scrolling to anchors (useful for fixed headers)
+   * Can be a number or a function that returns a number
+   * @default 0
+   */
+  anchorOffset?: number | (() => number)
+  /**
    * Enable debug logging
    * @default false
    */
