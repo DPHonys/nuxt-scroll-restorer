@@ -88,7 +88,7 @@ That's it! You can now use My Module in your Nuxt app ✨
 
 - [x] Finish in-code TODOs
 - [x] Update playground
-- [ ] Update dependencies
+- [x] Update dependencies
 - [ ] Check if all test cases are covered
 
 ### Documentation
