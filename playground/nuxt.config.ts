@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   scrollRestorer: {
     enabled: true,
     debug: true,
+    anchorOffset: 72,
   },
   // Fix for e2e tests - ensure dependencies are properly resolved
   nitro: {

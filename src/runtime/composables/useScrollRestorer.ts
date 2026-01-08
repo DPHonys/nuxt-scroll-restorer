@@ -34,7 +34,7 @@ export function useScrollRestorer(options: ScrollRestorerOptions = {}) {
   const route = useRoute()
   const runtimeConfig = useRuntimeConfig()
 
-  const { lazyTimeout, scrollBehavior, anchorBehavior, debug } = defu(
+  const { lazyTimeout, scrollBehavior, anchorBehavior, anchorOffset, debug } = defu(
     options,
     runtimeConfig.public.scrollRestorer
   )
@@ -139,6 +139,13 @@ export function useScrollRestorer(options: ScrollRestorerOptions = {}) {
     return false
   }
 
+  function getAnchorOffset(): number {
+    if (typeof anchorOffset === 'function') {
+      return anchorOffset()
+    }
+    return anchorOffset ?? 0
+  }
+
   function scrollToAnchor(hash: string): boolean {
     const id = hash.replace(/^#/, '')
     if (!id) return false
@@ -146,8 +153,15 @@ export function useScrollRestorer(options: ScrollRestorerOptions = {}) {
     const element =
       document.getElementById(id) || document.querySelector(`[name="${id}"]`)
     if (element) {
-      element.scrollIntoView({ behavior: anchorBehavior })
-      logger.debug(`Scrolled to anchor: #${id}`)
+      const offset = getAnchorOffset()
+      if (offset === 0) {
+        element.scrollIntoView({ behavior: anchorBehavior })
+      } else {
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY
+        const offsetPosition = elementPosition - offset
+        window.scrollTo({ top: offsetPosition, behavior: anchorBehavior })
+      }
+      logger.debug(`Scrolled to anchor: #${id}${offset ? ` with offset ${offset}px` : ''}`)
       return true
     }
     return false
